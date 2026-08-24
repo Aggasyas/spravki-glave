@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b3d2e">
+<title>Справка: визит Губернатора МО — 24.08.2026, МНПЦ «Голубое»</title>
+<style>
+  :root{
+    --bg:#f5f6f4;
+    --card:#ffffff;
+    --ink:#111827;
+    --muted:#5b6675;
+    --line:#e5e7eb;
+    --brand:#0b3d2e;
+    --brand-2:#116c4e;
+    --accent:#b8860b;
+    --hi:#fff8e1;
+    --warn:#8a2c1e;
+    --ok:#0f7a3e;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.5;
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  header.top{
+    position:sticky; top:0; z-index:20;
+    background:var(--brand); color:#fff;
+    padding:14px 16px 10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+  }
+  header.top .kicker{font-size:12px; opacity:.85; letter-spacing:.5px; text-transform:uppercase}
+  header.top h1{font-size:17px; margin:2px 0 6px; font-weight:600; line-height:1.3}
+  header.top .meta{font-size:13px; opacity:.9; display:flex; flex-wrap:wrap; gap:6px 12px}
+  header.top .meta b{font-weight:600}
+  .tabs{
+    position:sticky; top:78px; z-index:15;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    overflow-x:auto; -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs-inner{display:flex; gap:4px; padding:8px 10px; min-width:max-content}
+  .tab{
+    flex:0 0 auto;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:500;
+    background:#fff;
+    color:var(--ink);
+    border:1px solid var(--line);
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .tab.active{background:var(--brand); color:#fff; border-color:var(--brand)}
+  main{padding:12px 12px 40px; max-width:820px; margin:0 auto}
+  section.panel{display:none; animation:fade .18s ease}
+  section.panel.active{display:block}
+  @keyframes fade{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px;
+    margin:10px 0;
+    box-shadow:0 1px 2px rgba(15,23,42,.03);
+  }
+  .card h2{font-size:16px; margin:0 0 8px; color:var(--brand)}
+  .card h3{font-size:14px; margin:12px 0 6px; color:var(--brand-2)}
+  .card p{margin:6px 0}
+  .card ul{margin:6px 0 6px 18px; padding:0}
+  .card li{margin:3px 0}
+  .badge{
+    display:inline-block; padding:2px 8px; border-radius:999px;
+    font-size:11px; font-weight:600; letter-spacing:.3px;
+    background:var(--hi); color:var(--warn); border:1px solid #f0dca0;
+    margin-right:6px;
+  }
+  .badge.ok{background:#e7f6ec; color:var(--ok); border-color:#c1e5cd}
+  .badge.info{background:#e8f0fb; color:#1b4b8a; border-color:#c7d9f2}
+  .timeline{position:relative; padding-left:14px; border-left:2px solid var(--brand); margin:6px 0}
+  .t-item{margin:0 0 14px}
+  .t-time{font-weight:700; color:var(--brand); font-size:15px}
+  .t-title{font-weight:600; margin:2px 0}
+  .t-desc{font-size:14px; color:var(--muted)}
+  .t-desc b{color:var(--ink); font-weight:600}
+  .t-item.hi .t-time{color:#8a2c1e}
+  .t-item.hi{background:var(--hi); padding:8px 10px 10px; border-radius:8px; margin-left:-10px}
+  .person{
+    display:flex; gap:10px; align-items:flex-start;
+    padding:10px 0; border-top:1px solid var(--line);
+  }
+  .person:first-child{border-top:none; padding-top:0}
+  .avatar{
+    flex:0 0 40px; width:40px; height:40px; border-radius:50%;
+    background:var(--brand-2); color:#fff; display:flex;
+    align-items:center; justify-content:center; font-weight:600; font-size:14px;
+  }
+  .avatar.fed{background:#7a1f2b}
+  .avatar.reg{background:#0b3d2e}
+  .avatar.biz{background:#5a4720}
+  .avatar.local{background:#1b4b8a}
+  .p-name{font-weight:600; font-size:15px; line-height:1.25}
+  .p-role{font-size:13px; color:var(--muted); line-height:1.35; margin-top:2px}
+  .kv{display:grid; grid-template-columns:auto 1fr; gap:4px 10px; font-size:14px}
+  .kv dt{color:var(--muted)}
+  .kv dd{margin:0; font-weight:500}
+  .stat-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:6px 0}
+  .stat{background:#fbfaf5; border:1px solid #ecead9; border-radius:10px; padding:10px}
+  .stat .n{font-size:20px; font-weight:700; color:var(--brand); line-height:1}
+  .stat .l{font-size:12px; color:var(--muted); margin-top:4px}
+  details.acc{border-top:1px solid var(--line); padding:10px 0}
+  details.acc:first-of-type{border-top:none}
+  details.acc summary{
+    font-weight:600; font-size:15px; cursor:pointer;
+    list-style:none; display:flex; justify-content:space-between; align-items:center;
+  }
+  details.acc summary::after{content:"+"; color:var(--brand); font-size:20px; font-weight:400}
+  details.acc[open] summary::after{content:"−"}
+  details.acc .body{padding:8px 0 0; font-size:14.5px}
+  .quote{
+    background:#f0f7f4; border-left:3px solid var(--brand-2);
+    padding:8px 10px; margin:8px 0; font-size:14px; border-radius:0 6px 6px 0;
+  }
+  .callout{
+    background:var(--hi); border:1px solid #f0dca0; border-radius:10px;
+    padding:10px 12px; margin:10px 0; font-size:14px;
+  }
+  .callout b{color:var(--warn)}
+  a.gmap{
+    display:inline-block; margin-top:6px; padding:8px 12px;
+    background:var(--brand); color:#fff; border-radius:8px;
+    font-size:13px; text-decoration:none; font-weight:500;
+  }
+  .source{font-size:11px; color:var(--muted); margin-top:8px; padding-top:8px; border-top:1px dashed var(--line)}
+  .row{display:flex; gap:8px; flex-wrap:wrap; margin:6px 0}
+  .chip{background:#eef2f0; color:var(--brand); padding:4px 10px; border-radius:999px; font-size:12px; font-weight:500}
+  @media (min-width:640px){
+    .stat-grid{grid-template-columns:repeat(4,1fr)}
+    main{padding:14px 20px 40px}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="kicker">Справка Главе г.о. Солнечногорск</div>
+  <h1>Визит Губернатора МО А.Ю. Воробьёва в МНПЦ КР «Голубое»</h1>
+  <div class="meta">
+    <span><b>24 августа 2026, пн</b></span>
+    <span>Начало: <b>13:55</b> (Глава — 13:40)</span>
+    <span>Убытие: ~16:25</span>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <div class="tabs-inner">
+    <button class="tab active" data-tab="reglament">Регламент</button>
+    <button class="tab" data-tab="delegation">Делегация</button>
+    <button class="tab" data-tab="golub">МНПЦ «Голубое»</button>
+    <button class="tab" data-tab="svo">СВО-реабилитация</button>
+    <button class="tab" data-tab="assoc">Ассоциация ветеранов</button>
+    <button class="tab" data-tab="rabota">Трудоустройство</button>
+    <button class="tab" data-tab="med">Медицина округа</button>
+    <button class="tab" data-tab="okrug">Округ: факты</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- 1. РЕГЛАМЕНТ -->
+<section class="panel active" id="reglament">
+  <div class="card">
+    <h2>Место и логистика</h2>
+    <div class="kv">
+      <dt>Объект</dt><dd>Центр трансляционной реабилитации МНПЦ КР «Голубое»<br><span style="color:var(--muted); font-weight:400; font-size:13px">(филиал ФГБУ ФНКЦ МРиК ФМБА России)</span></dd>
+      <dt>Адрес</dt><dd>пгт Голубое, ул. Родниковая, стр. 6, корп. 1</dd>
+      <dt>Координаты</dt><dd>55.985479, 37.101915</dd>
+      <dt>Форма одежды</dt><dd>Деловой костюм</dd>
+    </div>
+    <a class="gmap" href="https://yandex.ru/maps/?pt=37.101915,55.985479&z=17&l=map" target="_blank" rel="noopener">Открыть на карте</a>
+  </div>
+
+  <div class="card">
+    <h2>Хронометраж</h2>
+    <div class="timeline">
+
+      <div class="t-item hi">
+        <div class="t-time">13:40 — Глава на месте</div>
+        <div class="t-desc">Прибытие Главы, финальная сверка расстановки.</div>
+      </div>
+
+      <div class="t-item hi">
+        <div class="t-time">13:55 — Прибытие Губернатора</div>
+        <div class="t-title">Встречают лично:</div>
+        <div class="t-desc">
+          • <b>К.А. Михальков</b> — Глава г.о. Солнечногорск<br>
+          • <b>М.В. Забелин</b> — зампред Правительства МО, министр здравоохранения МО<br>
+          • <b>А.А. Кирюхин</b> — министр социального развития МО<br>
+          Присутствует: <b>Е.Г. Швелидзе</b> — министр информации и молодёжной политики МО.
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-time">14:00 — Прибытие федеральной делегации</div>
+        <div class="t-desc">
+          В. Р. Мединский (помощник Президента РФ), М. А. Мурашко (Минздрав РФ), В. И. Скворцова (ФМБА), А. Е. Цивилева («Защитники Отечества» / Минобороны РФ).
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-time">14:00–14:45 — Осмотр Центра трансляционной реабилитации</div>
+        <div class="t-desc">
+          Маршрут по площадкам:
+          <ul style="margin:4px 0 0 18px; padding:0">
+            <li>кабинет персонализированного цифрового обследования;</li>
+            <li>блок когнитивного здоровья и коррекции аддитивных состояний — технологии психологии и нейропсихологии;</li>
+            <li>центр протезирования, «школа ходьбы»;</li>
+            <li>лаборатория нейротехнологий, отделение цифрового протезирования;</li>
+            <li>центр дистанционной реабилитации;</li>
+            <li>центр адаптивного автомобильного карт-спорта;</li>
+            <li>интерактивная зона в спортивном блоке — работа с бойцами СВО;</li>
+            <li>работа волонтёрского корпуса.</li>
+          </ul>
+          <br>
+          Переход к автодрому — через центральный холл на улицу, по ходу — знакомство с АРТ-терапией («школа цвета»).<br>
+          <b>Комментируют:</b> И. И. Ларионова (гендиректор ФНКЦ МРиК ФМБА), И. А. Яроцкая (директор центра).
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-time">14:45–15:30 — Автодром «Автошколы для СВОих»</div>
+        <div class="t-desc">
+          Демонстрация обучения маломобильных пациентов вождению адаптированного авто, включая <b>«КАМАЗ»</b>.<br>
+          <b>Комментирует:</b> Р. Т. Гайнутдинов, исполнительный директор «Автошкола для СВОих».<br><br>
+          <b>Приветственные слова:</b> Мединский, Скворцова, Цивилева, Мурашко, Воробьёв, губернаторы Бабушкин (Астрахань), Шапша (Калуга), Ведерников (Псков), депутат ГД Киселев, Ефанов (ВТБ), Фурсенко (фонд «Высокотехнологичная медпомощь»), Когогин (КАМАЗ).<br><br>
+          <b>Вручения:</b>
+          <ul style="margin:4px 0 0 18px; padding:0">
+            <li>Скворцова + Цивилева — ключи от адаптированных авто (2 чел.);</li>
+            <li>Савелов (ГАИ) + Когогин (КАМАЗ) — водительские права (2 чел.);</li>
+            <li>Марш автомобилей;</li>
+            <li>Скворцова — ведомственные награды (5 чел.);</li>
+            <li>Рожков — награды спортсменам-участникам СВО (3 чел.);</li>
+            <li>Военный оркестр и ансамбль «Жёны героев» — 2 песни.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-time">15:30–15:35 — Переход к месту совещания</div>
+      </div>
+
+      <div class="t-item hi">
+        <div class="t-time">15:35–16:25 — Совещание</div>
+        <div class="t-desc">
+          Совещание с представителями федеральных органов исполнительной власти и главами регионов по вопросам организации <b>комплексной реабилитации</b>. Согласно регламенту.
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-time">16:25 — Убытие</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 2. ДЕЛЕГАЦИЯ -->
+<section class="panel" id="delegation">
+  <div class="card">
+    <h2>Федеральный уровень</h2>
+
+    <div class="person">
+      <div class="avatar fed">ВМ</div>
+      <div><div class="p-name">Мединский Владимир Ростиславович</div>
+      <div class="p-role">Помощник Президента Российской Федерации</div></div>
+    </div>
+    <div class="person">
+      <div class="avatar fed">ММ</div>
+      <div><div class="p-name">Мурашко Михаил Альбертович</div>
+      <div class="p-role">Министр здравоохранения РФ</div></div>
+    </div>
+    <div class="person">
+      <div class="avatar fed">ВС</div>
+      <div><div class="p-name">Скворцова Вероника Игоревна</div>
+      <div class="p-role">Руководитель Федерального медико-биологического агентства (ФМБА). Вручает ключи и ведомственные награды.</div></div>
+    </div>
+    <div class="person">
+      <div class="avatar fed">АЦ</div>
+      <div><div class="p-name">Цивилева Анна Евгеньевна</div>
+      <div class="p-role">Председатель Госфонда «Защитники Отечества», статс-секретарь — заместитель Министра обороны РФ</div></div>
+    </div>
+    <div class="person">
+      <div class="avatar fed">МК</div>
+      <div><div class="p-name">Киселев Михаил Сергеевич</div>
+      <div class="p-role">Депутат Государственной Думы ФС РФ</div></div>
+    </div>
+    <div class="person">
+      <div class="avatar fed">ПР</div>
+      <div><div class="p-name">Рожков Павел Алексеевич</div>
+      <div class="p-role">Президент Паралимпийского комитета России. Вручает награды спортсменам-СВО.</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Регионы</h2>
+    <div class="person">
+      <div class="avatar reg">АВ</div>
+      <div><div class="p-name">Воробьёв Андрей Юрьевич</div>
+      <div class="p-role">Губернатор Московской области</div></div>
+    </div>
+    <div class="person">
+      <div class="avatar reg">ИБ</div>
+      <div><div class="p-name">Бабушкин Игорь Юрьевич</div>
+      <div class="p-role">Губернатор Астраханской области</div></div>
+    </div>
+    <div class="person">
+      <div class="avatar reg">ВШ</div>
+      <div><div class="p-name">Шапша Владислав Валерьевич</div>
+      <div class="p-role">Губернатор Калужской области</div></div>
+    </div>
+    <div class="person">
+      <div class="avatar reg">МВ</div>
+      <div><div class="p-name">Ведерников Михаил Юрьевич</div>
+      <div class="p-role">Губернатор Псковской области</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Правительство МО</h2>
+    <div class="person">
+      <div class="avatar reg">МЗ</div>
+      <div><div class="p-name">Забелин Максим Васильевич</div>
+      <div class="p-role">Зампред Правительства МО — министр здравоохранения МО. <b>Встречает вместе с Главой.</b></div></div>
+    </div>
+    <div class="person">
+      <div class="avatar reg">АК</div>
+      <div><div class="p-name">Кирюхин Андрей Александрович</div>
+      <div class="p-role">Министр социального развития МО. <b>Встречает вместе с Главой.</b></div></div>
+    </div>
+    <div class="person">
+      <div class="avatar reg">КШ</div>
+      <div><div class="p-name">Швелидзе Кетеван Георгийевна</div>
+      <div class="p-role">Министр информации и молодёжной политики МО. <b>Присутствует при встрече.</b></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Бизнес, фонды, отраслевые</h2>
+    <div class="person">
+      <div class="avatar biz">АЕ</div>
+      <div><div class="p-name">Ефанов Александр Владимирович</div>
+      <div class="p-role">Вице-президент ПАО «Банк ВТБ»</div></div>
+    </div>
+    <div class="person">
+      <div class="avatar biz">СФ</div>
+      <div><div class="p-name">Фурсенко Сергей Александрович</div>
+      <div class="p-role">Председатель совета фонда «Высокотехнологичная медицинская помощь»</div></div>
+    </div>
+    <div class="person">
+      <div class="avatar biz">СК</div>
+      <div><div class="p-name">Когогин Сергей Анатольевич</div>
+      <div class="p-role">Генеральный директор ПАО «КАМАЗ». Вручает права участникам СВО.</div></div>
+    </div>
+    <div class="person">
+      <div class="avatar biz">РГ</div>
+      <div><div class="p-name">Гайнутдинов Рамиль Талгатович</div>
+      <div class="p-role">Исполнительный директор ООО «Автошкола для СВОих». Комментатор автодрома.</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Принимающая сторона / МНПЦ</h2>
+    <div class="person">
+      <div class="avatar local">ИЛ</div>
+      <div><div class="p-name">Ларионова Ирина Ивановна</div>
+      <div class="p-role">Генеральный директор ФГБУ ФНКЦ МРиК ФМБА России. Комментатор осмотра.</div></div>
+    </div>
+    <div class="person">
+      <div class="avatar local">ИЯ</div>
+      <div><div class="p-name">Яроцкая Ирина Анатольевна</div>
+      <div class="p-role">Директор центра трансляционной реабилитации МНПЦ «Голубое», к.м.н.</div></div>
+    </div>
+    <div class="person">
+      <div class="avatar local">ИС</div>
+      <div><div class="p-name">Савелов Игорь Николаевич</div>
+      <div class="p-role">Начальник Госавтоинспекции ОМВД России по г.о. Солнечногорск. Вручает права участникам СВО.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. МНПЦ ГОЛУБОЕ -->
+<section class="panel" id="golub">
+  <div class="card">
+    <h2>МНПЦ КР «Голубое» — ключевое</h2>
+    <div class="kv">
+      <dt>Статус</dt><dd>Филиал ФГБУ ФНКЦ МРиК ФМБА России</dd>
+      <dt>Директор</dt><dd>Яроцкая Ирина Анатольевна, к.м.н.</dd>
+      <dt>Территория</dt><dd>18 га, пгт Голубое, ул. Родниковая, 6/1</dd>
+      <dt>Кадры</dt><dd>547 человек</dd>
+      <dt>Основан</dt><dd>1968 г. (реабилитационный профиль)</dd>
+      <dt>Режим</dt><dd>Круглосуточно, ОМС + федеральные программы</dd>
+    </div>
+
+    <h3>Коечный фонд — 530 коек</h3>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">230</div><div class="l">для участников СВО</div></div>
+      <div class="stat"><div class="n">270</div><div class="l">гражданские</div></div>
+      <div class="stat"><div class="n">30</div><div class="l">реанимация/ИТ</div></div>
+      <div class="stat"><div class="n">18 га</div><div class="l">парк, терренкур</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Что покажут (маршрут осмотра)</h2>
+    <ul>
+      <li><b>Центр трансляционной реабилитации</b> — лаборатория нейротехнологий, отделение цифрового протезирования, дистанционная реабилитация.</li>
+      <li><b>Кабинет персонализированного цифрового обследования</b> — стартовая точка маршрута.</li>
+      <li><b>Блок когнитивного здоровья</b> — коррекция аддитивных состояний, VR-терапия, нейропсихология.</li>
+      <li><b>Центр протезирования</b> и <b>«школа ходьбы»</b>. С января 2025 г. — собственный модуль протезного предприятия (полный цикл: подбор → изготовление → обучение).</li>
+      <li><b>Центр адаптивного автокарт-спорта</b> — новая линия АФК.</li>
+      <li><b>Автодром «Автошколы для СВОих»</b> — вождение адаптированного авто и «КАМАЗа».</li>
+      <li><b>АРТ-терапия / «школа цвета»</b> — по ходу перехода.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Ключевые методики</h2>
+    <ul>
+      <li>Роботизированная механотерапия, тренажёры с БОС.</li>
+      <li>VR-технологии и нейроинтерфейсы для когнитивной реабилитации.</li>
+      <li>Индивидуальные протезы с микропроцессорным управлением.</li>
+      <li>Мультидисциплинарные бригады — единая программа восстановления.</li>
+      <li>«Эрго-квартира» — отработка бытовых навыков самообслуживания.</li>
+      <li>Совместные программы с Паралимпийским комитетом России.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Партнёры по профобучению</h2>
+    <ul>
+      <li>ГБПОУ МО «Колледж “Подмосковье”»</li>
+      <li>ФГБОУ ДПО «Институт развития профессионального образования»</li>
+      <li>ФГАОУ ВО «Государственный университет просвещения»</li>
+      <li>Фонд «Защитники Отечества» — реабилитация ветеранов СВО и их семей</li>
+      <li>Паралимпийский комитет России — регулярные паралимпийские уроки</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>МФЦ на территории</h2>
+    <p>С <b>февраля 2026 г.</b> специалист МБУ «МФЦ г.о. Солнечногорск» еженедельно ведёт выездной приём в Центре. Ежемесячно — <b>75–80 военнослужащих</b>, около <b>40 госуслуг</b>. Самые востребованные: восстановление паспорта РФ, СНИЛС, восстановление кабинета на Госуслугах.</p>
+  </div>
+</section>
+
+<!-- 4. СВО-реабилитация -->
+<section class="panel" id="svo">
+  <div class="card">
+    <h2>Результаты реабилитации (МНПЦ «Голубое»)</h2>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">4 578</div><div class="l">участников СВО прошли полный курс</div></div>
+      <div class="stat"><div class="n">+65%</div><div class="l">рост качества жизни пациентов</div></div>
+      <div class="stat"><div class="n">80%</div><div class="l">достигают независимости</div></div>
+      <div class="stat"><div class="n">60–70%</div><div class="l">улучшение мобильности после протезирования</div></div>
+      <div class="stat"><div class="n">−30–50%</div><div class="l">уровень депрессии (психопомощь)</div></div>
+      <div class="stat"><div class="n">149</div><div class="l">членов семей прошли курс семейной реабилитации</div></div>
+      <div class="stat"><div class="n">448</div><div class="l">приняты в адаптивный спорт</div></div>
+      <div class="stat"><div class="n">70</div><div class="l">зачислены в сборные команды</div></div>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-top:8px">Профиль риска среди пациентов: ПТСР — 45%, тревожные расстройства — 10%, аффективные — 5%. 91,8% хотят вернуться к прежней профессии, 37% — получить новую специальность.</p>
+  </div>
+
+  <div class="card">
+    <h2>Тимоновский госпиталь (филиал №2 «1586 ВКГ» Минобороны РФ)</h2>
+    <div class="kv">
+      <dt>Начальник</dt><dd>полковник м/с Стеценко Богдан Григорьевич</dd>
+      <dt>Адрес</dt><dd>д. Тимоново, ул. Подмосковная, 7</dd>
+      <dt>Коечный фонд</dt><dd>300 коек, 27 отделений</dd>
+      <dt>Кадры</dt><dd>420 человек</dd>
+      <dt>С начала СВО</dt><dd><b>~3 900 раненых</b> принято; ведётся ВВЭ</dd>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">Профили: хирургия (в т.ч. пластика лица), травма-ортопедия (минно-взрывные, сочетанные), реанимация/анестезиология, неврология, кардиология, диагностика (КТ, УЗИ, эндоскопия).</p>
+  </div>
+
+  <div class="card">
+    <h2>ФНКЦ реаниматологии и реабилитологии (Лыткино)</h2>
+    <div class="kv">
+      <dt>Директор</dt><dd>чл.-корр. РАН, проф. Гречко Андрей Вячеславович</dd>
+      <dt>Кадры</dt><dd>826 человек</dd>
+      <dt>Специализация</dt><dd>Критические и хронические критические состояния, тяжёлые ЧМТ, длительная ИВЛ, нейрореабилитация</dd>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">Технологии: роботизированные экзоскелеты, ФЭС, гидрокинезотерапия, 3D-импланты черепа, нейроинтерфейсы, ЭЭГ-видеомониторинг.</p>
+  </div>
+
+  <div class="card">
+    <h2>Санаторий «Солнечногорский» (СКК «Подмосковье»)</h2>
+    <div class="kv">
+      <dt>Территория</dt><dd>79 га</dd>
+      <dt>Коечный фонд</dt><dd>403</dd>
+      <dt>Кадры</dt><dd>35 врачей 13 специальностей, 72 медсестры</dd>
+      <dt>Реабилитация СВО в 2025</dt><dd><b>2 036 участников</b></dd>
+      <dt>Сейчас на лечении</dt><dd>150 военнослужащих, из них 18 из МО</dd>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">Пилот «Вместе на смене» — ученики медицинских предпрофклассов Школы №5 стажируются у практикующих врачей санатория.</p>
+  </div>
+
+  <div class="card">
+    <h2>Солнечногорская больница — сочетанная травма СВО</h2>
+    <div class="kv">
+      <dt>Отделение</dt><dd>сочетанной травмы на 40 коек</dd>
+      <dt>Пролечено за полгода</dt><dd><b>609 пациентов</b></dd>
+      <dt>Реабилитация СВО</dt><dd>5 коек (с 23.10.2025); в 2025 — 15, в 2026 — 78 пациентов</dd>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Госпиталь ветеранов войн (МО)</h2>
+    <p>Начальник — <b>Яроцкий С. Ю.</b>, коечный фонд 450, за 2025 — <b>10 873 пациента</b>. <b>I место</b> в конкурсе «Лучший госпиталь ветеранов войн» РФ.</p>
+    <p><b>2026–2027 (планы):</b> открытие отделения реабилитации СВО на 30 коек; поставка КТ, МРТ и 24 ед. реабилитационного оборудования (комплексы «Стэдис», «Биокинект», «Орторент»); Центр здорового долголетия.</p>
+  </div>
+</section>
+
+<!-- 5. Ассоциация ветеранов СВО -->
+<section class="panel" id="assoc">
+  <div class="card">
+    <h2>Ассоциация ветеранов СВО — г.о. Солнечногорск</h2>
+    <div class="row">
+      <span class="chip">160 ветеранов</span>
+      <span class="chip">2-е место среди 51 муниципалитета МО</span>
+      <span class="chip">3 000+ подписчиков</span>
+    </div>
+    <div class="kv" style="margin-top:8px">
+      <dt>Руководитель</dt><dd><b>Воробьёв Дмитрий Владимирович</b>, кавалер ордена Мужества, советник администрации округа</dd>
+      <dt>Локация</dt><dd>Единый центр — г. Солнечногорск, ул. Красная, 22А, 1 этаж, ТЦ «Солнечный»</dd>
+      <dt>Начало работы центра</dt><dd>Декабрь 2025 г.</dd>
+      <dt>Консолидация</dt><dd>Май 2025 г. — с Ассоциацией ветеранов СВО</dd>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Гуманитарная и социальная работа</h2>
+    <ul>
+      <li>Ежемесячно — <b>~50 тонн</b> гуманитарной помощи в зону СВО (РЭБ «Покров», вода в ДНР/ЛНР).</li>
+      <li>Еженедельно — продуктовые наборы <b>40+ семьям</b> на патронаже.</li>
+      <li>Юридическая помощь и правовая поддержка бойцов и семей.</li>
+      <li>Постоянно работающий психолог (индивидуально и группы), адвокат.</li>
+      <li>Помощь в поиске пропавших без вести, трудоустройстве, бытовых вопросах (дрова, газификация).</li>
+      <li>Курирование двух подшефных школ ЛНР — Луганская вечерняя школа и ДЮСШ «Заря».</li>
+      <li>Женсовет — 20 участниц (руководитель — Кристина Авдалян).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Особые проекты</h2>
+    <ul>
+      <li><b>Яхтинг</b> с АНО «Мир человека» — выход на озеро Сенеж с инструктором для бойцов с ампутациями.</li>
+      <li><b>Картинг</b> — на картодроме, включая бойцов с ампутированными конечностями.</li>
+      <li>Обучение в мастерской <b>«Сенеж», программа «Поколение чести»</b> — 4 чел. (февраль 2026).</li>
+      <li><b>Поступление в ВУЗ</b> — 5 членов Ассоциации.</li>
+      <li>Уникальные концерты: «Музыка войны», Куприк, Цыганова, Паскаль, Р. Газманов — на безвозмездной основе, включая госпитали и зону СВО.</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <b>Персональная история:</b> <b>Афонин Сергей Анатольевич</b> (49 лет, Солнечногорск, доброволец, ампутация голени под Херсоном, п. Крынки). Работает водителем автобуса №4 «Мострансавто» — единственный водитель автобуса в России с ампутацией. С <b>сентября 2026</b> начинает работу инструктором «Школы для СВОих» в МНПЦ «Голубое» — будет обучать вождению бойцов с ампутациями. Награждён медалью «За отвагу» и медалью «Защитник Отечества».
+  </div>
+</section>
+
+<!-- 6. Трудоустройство -->
+<section class="panel" id="rabota">
+  <div class="card">
+    <h2>Трудоустройство участников СВО (2025–2026)</h2>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">25</div><div class="l">обратилось</div></div>
+      <div class="stat"><div class="n">15</div><div class="l">трудоустроены</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">помощь с ИП / самозанятостью</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">не подошли вакансии</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Трудоустроенные</h2>
+    <details class="acc">
+      <summary>В администрацию округа и МКУ</summary>
+      <div class="body">
+        <ul>
+          <li><b>Веринский Д. М.</b> — МКУ «Солнечногорск-Транссервис» / МКУ ХЭС, водитель (с 25.10.2024).</li>
+          <li><b>Даурова Ж. К.</b> — МКУ «Департамент инвестиционного развития» (декрет).</li>
+          <li><b>Бакланов А. В.</b> — МБУ «Возрождение», методист (05.08.2025), инвалидность по СВО.</li>
+          <li><b>Сенцов А. В.</b> — МБУ «Возрождение», спец. по молодёжи → и. о. директора с 05.12.2025.</li>
+          <li><b>Шапошников В. А.</b> — МБУ «Возрождение», зам. по безопасности (06.02–21.05.2026), 25.05.2026 ушёл на СВО.</li>
+          <li><b>Алиханов М. М.</b> — Администрация → нач. управления ФКиС с 04.10.2025, уволился 22.05.2026.</li>
+          <li><b>Калинин А. В.</b> — Администрация / зам. директора МКУ «ХЭС» (17.12.2025), трудовой договор приостановлен (заключил контракт).</li>
+          <li><b>Воробьёв Д. В.</b> — Советник администрации на общественных началах (с 22.10.2025), руководитель Ассоциации ветеранов.</li>
+          <li><b>Лебедев С. А.</b> — МБУ «ДЕЗ» г.о. Солнечногорск.</li>
+        </ul>
+      </div>
+    </details>
+    <details class="acc">
+      <summary>В бизнес и госструктуры</summary>
+      <div class="body">
+        <ul>
+          <li><b>Ларькин Д. С.</b> — мебельная фабрика, Хметьево.</li>
+          <li><b>Сергунов Д. А.</b> — ООО «Чистая вода», оператор (09.02–03.04.2026, ушёл по собств. желанию).</li>
+          <li><b>Афонин С. А.</b> — «Мострансавто», водитель (03.10.2025).</li>
+          <li><b>Шендаров В. В.</b> — ООО «Фарбраум», оператор (16.02.2026).</li>
+          <li><b>Сергеев Е. О.</b> — ООО «Чистая вода», комплектовщик (22.04.2026).</li>
+          <li><b>Бушин С. А.</b> — ООО «Королевская вода», помощник рук. службы безопасности.</li>
+        </ul>
+      </div>
+    </details>
+    <details class="acc">
+      <summary>ИП / самозанятость</summary>
+      <div class="body">
+        <ul>
+          <li><b>Назаровец Ю. В.</b> — сбор документов в Фонд микрофинансирования «Начни своё дело».</li>
+          <li><b>Воробьёв Д. В.</b> — получил займ 2 млн (2025), в 2026 — субсидия на компенсацию затрат на оборудование.</li>
+          <li><b>Барков В. Г.</b> — помощь в оформлении бизнес-плана для соцконтракта.</li>
+        </ul>
+      </div>
+    </details>
+    <details class="acc">
+      <summary>Меры поддержки бизнеса СВО</summary>
+      <div class="body">
+        <p>2025: 14 экскурсий на предприятия округа + 5 экскурсий промтуризма для семей СВО.<br>
+        2026: 7 экскурсий промтуризма для семей и участников СВО.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 7. Медицина округа -->
+<section class="panel" id="med">
+  <div class="card">
+    <h2>Медицина округа — общая карта</h2>
+    <h3>Федеральные учреждения</h3>
+    <ul>
+      <li><b>МНПЦ КР «Голубое»</b> — 530 коек, реабилитация СВО</li>
+      <li><b>Тимоновский госпиталь</b> — 300 коек, военный многопрофильный</li>
+      <li><b>ФНКЦ РР (Лыткино)</b> — реаниматология + нейрореабилитация</li>
+      <li><b>Санаторий «Солнечногорский»</b> — филиал СКК «Подмосковье», 403 койки</li>
+    </ul>
+    <h3>Региональные учреждения</h3>
+    <ul>
+      <li><b>Солнечногорская больница</b> — 411 коек основного корпуса</li>
+      <li><b>Госпиталь ветеранов войн МО</b> — 450 коек, I место в РФ</li>
+      <li>Туберкулёзная больница им. А. Е. Рабухина</li>
+      <li>Стоматологическая поликлиника (Сенежский пр., 2)</li>
+      <li>Солнечногорская подстанция скорой помощи (95 974 чел., 13 бригад)</li>
+      <li>Психоневрологический диспансер</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Солнечногорская больница</h2>
+    <div class="kv">
+      <dt>Главврач</dt><dd>Борисова Лариса Николаевна</dd>
+      <dt>Население</dt><dd>144,5 тыс. жителей</dd>
+      <dt>Стационар</dt><dd>411 коек (основной), + Менделеево (30), Ржавки (55), инфекционный (35)</dd>
+      <dt>Амбулаторно</dt><dd>7 поликлиник, 4 амбулатории, 21 ФАП</dd>
+      <dt>Кадры</dt><dd>364 врача, 636 средний персонал; укомплектованность 97%</dd>
+      <dt>Оборудование 2026</dt><dd>1 078 ед. на 84 млн ₽ (эндоскопия, нейрохирургия, маммограф, инкубаторы)</dd>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">3-уровневая реабилитация: ОРИТ → 60 коек круглосуточно (с 2021) + 5 дневного стационара + 5 коек СВО (с 23.10.2025). Экзоскелет ExoAtlet, тренажёры Kinetec, ORTORENT, ORMED, ЭКЗАРТА.</p>
+  </div>
+
+  <div class="card">
+    <h2>Стоматологическая поликлиника</h2>
+    <div class="kv">
+      <dt>Главврач</dt><dd>Абаджян Виолетта Николаевна, к.м.н.</dd>
+      <dt>Обслуживание</dt><dd>146 905 чел.; за 7 мес. 2026 — 24+ тыс. пациентов (+10%), детская стоматология +14%</dd>
+      <dt>Мощность</dt><dd>145 посещений в смену; ожидание неотложной — ~20 минут</dd>
+      <dt>Онкоскрининг 2026</dt><dd>6 000+ осмотров, 10 подозрений на ЗНО</dd>
+      <dt>Льготное протезирование СВО</dt><dd>С конца 2025 — 3 чел.</dd>
+    </div>
+    <p style="font-size:13px; color:var(--muted)">В 2026 приобретён интраоральный сканер + оборудование цифрового моделирования улыбки. Занимает 635 кв. м на 1-м этаже жилого дома, Сенежский пр., 2. Требуется ремонт (последний — 2014).</p>
+  </div>
+
+  <div class="card">
+    <h2>Скорая помощь</h2>
+    <div class="kv">
+      <dt>Заведующий</dt><dd>Рахманов Артём Викторович</dd>
+      <dt>Население</dt><dd>95 974 чел.</dd>
+      <dt>Бригад в сутки</dt><dd>13</dd>
+      <dt>Вызовов</dt><dd>29 855 (12 539 экстренных + 17 316 неотложных)</dd>
+      <dt>Кадры</dt><dd>Укомплектованность мед. — 85%, водителей — 72%</dd>
+      <dt>Поддержка</dt><dd>53 сотрудника — компенсация аренды 30 000 ₽; муниц. проезд 4 500 ₽ — 53 чел.</dd>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Госпиталь ветеранов войн МО</h2>
+    <div class="kv">
+      <dt>Начальник</dt><dd>Яроцкий Сергей Юрьевич</dd>
+      <dt>Коечный фонд</dt><dd>450 (гериатрия 210, кардио 40, ортопедия/невр. по 45)</dd>
+      <dt>2025</dt><dd>10 873 пациента; хир. активность 76,5% (41,4% малоинвазивно); летальность 0,08%; госзадание 103%</dd>
+      <dt>Достижение</dt><dd><b>I место</b> в РФ — «Лучший госпиталь ветеранов войн»</dd>
+      <dt>Планы 2026–27</dt><dd>Отделение реабилитации СВО на 30 коек; КТ, МРТ, реабилитационные комплексы</dd>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Меры поддержки медработников (округ)</h2>
+    <ul>
+      <li>Компенсация аренды жилья <b>25 000 ₽/мес</b> — 6 врачам Солнечногорской больницы, 2 сотрудникам скорой.</li>
+      <li>Компенсация проезда <b>4 500 ₽/мес</b> — 9 врачам больницы, 53 сотрудникам скорой.</li>
+      <li>Региональные: соципотека (50% первоначального взноса), земельные участки, доплаты молодым (15 000 ₽ врачам, 7 000 ₽ среднему персоналу на 3 года).</li>
+      <li>Федеральные: «Земский доктор» — 1 млн ₽, ССВ — 29 000 ₽/мес врачам ЦРБ, 11 500 ₽ врачам скорой.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 8. Округ: факты -->
+<section class="panel" id="okrug">
+  <div class="card">
+    <h2>Подготовка к ОЗП 2026/2027</h2>
+    <div class="kv">
+      <dt>МКД</dt><dd>1047 всего (32 УК — 874, 9 ТСЖ — 86, 87 — непосредственное управление)</dd>
+      <dt>Паспорта</dt><dd>729 из 1047 загружено (21.08.2026)</dd>
+      <dt>Замечания ГУСТ</dt><dd>146 МКД, ДК до 31.08.2026</dd>
+      <dt>Гидравлика т/сетей</dt><dd>152,4 км — 69%</dd>
+      <dt>Котельные</dt><dd>68 всего; 49 прошли ППР; 10 сезонных (вкл. 15.09.2026); 7 остановлены</dd>
+      <dt>СЗО</dt><dd>91/91 подготовлено, 88 паспортов, срок до 28.08</dd>
+    </div>
+    <h3>Устранение замечаний мониторинговой группы</h3>
+    <ul>
+      <li>«Газпром теплоэнерго МО»: 77 замечаний → 29 устранено (37%)</li>
+      <li>ГУП МО «Солнечногорское ЖКХ»: 21 → 11 (50%)</li>
+      <li>ЖКС №6 ФГБУ «ЦЖКУ» Минобороны: 1 → 0 (0%)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Волонтёрство</h2>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">~200</div><div class="l">2024 г. — базовый уровень</div></div>
+      <div class="stat"><div class="n">800+</div><div class="l">2025 г. — удвоение</div></div>
+      <div class="stat"><div class="n">900+</div><div class="l">2026 г. — рост активности</div></div>
+      <div class="stat"><div class="n">×4</div><div class="l">рост за 3 года</div></div>
+    </div>
+    <p style="font-size:13px; color:var(--muted); margin-top:6px">Штаб «Волонтёры Подмосковья» (с 2020) — 10 масштабных проектов, 16 добровольческих объединений. В 2025 г. Главой принят перечень мер поддержки добровольцев в округе. Направления: экология, соц., патриотика/СВО, спорт, культура, событийка, медиа, гуманитарка, «серебряное» добровольчество.</p>
+  </div>
+
+  <div class="card">
+    <h2>Быстрые тезисы для приветствия</h2>
+    <div class="quote">
+      Округ — <b>федеральный кластер комплексной реабилитации</b>: МНПЦ «Голубое» (530 коек), ФНКЦ РР (Лыткино), Тимоновский госпиталь (300 коек), Госпиталь ветеранов войн МО (450 коек, I место в РФ), санаторий «Солнечногорский» (403 койки).
+    </div>
+    <div class="quote">
+      В МНПЦ «Голубое» — <b>4 578 участников СВО</b> завершили полный курс реабилитации; открыт собственный модуль <b>протезного предприятия</b> (январь 2025).
+    </div>
+    <div class="quote">
+      Ассоциация ветеранов СВО — <b>160 бойцов, 2-е место в МО среди 51 муниципалитета</b>. Единый центр поддержки открыт в декабре 2025.
+    </div>
+    <div class="quote">
+      Работа с семьями: <b>50 т/мес</b> гуманитарной помощи, продуктовые наборы 40+ семьям еженедельно.
+    </div>
+    <div class="quote">
+      Волонтёрство выросло <b>в 4 раза за 3 года</b> — с 200 до 900+ человек.
+    </div>
+  </div>
+</section>
+
+<div class="source" style="text-align:center">
+  Источники: программа поездки А.Ю. Воробьёва (24.08.2026), программа визита в МНПЦ «Голубое», общая справка по МНПЦ КР «Голубое» и учреждениям округа. Внутренний документ. Составлено 24.08.2026.
+</div>
+
+</main>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('section.panel');
+  tabs.forEach(t=>{
+    t.addEventListener('click',()=>{
+      tabs.forEach(x=>x.classList.remove('active'));
+      panels.forEach(p=>p.classList.remove('active'));
+      t.classList.add('active');
+      document.getElementById(t.dataset.tab).classList.add('active');
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+</script>
+</body>
+</html>
